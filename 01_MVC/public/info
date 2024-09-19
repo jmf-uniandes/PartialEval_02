@@ -1,0 +1,14 @@
+Status
+BBDD
+    structure=>Done
+    script=>Done
+CRUD
+    clientes =>Done
+    events=> Done
+    users=>Done
+Frontend
+    clientes =>Done
+    events=> Pending
+Report
+    reservaciones =>Pending
+    

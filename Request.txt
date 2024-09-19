@@ -1,0 +1,5 @@
+Sistema de Reservación de Eventos:
+Desarrolla una base de datos para gestionar eventos y clientes, incluyendo reservaciones. Tablas: `Eventos` (evento_id, nombre, descripcion, fecha, ubicacion), `Clientes` (cliente_id, nombre, apellido, email, telefono).  Jose Figueroa
++ 1 Reporte, Cualquiera
+
+
