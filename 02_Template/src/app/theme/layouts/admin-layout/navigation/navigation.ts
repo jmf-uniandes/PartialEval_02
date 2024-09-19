@@ -70,14 +70,14 @@ export const NavigationItems: NavigationItem[] = [
     type: 'group',
     icon: 'icon-navigation',
     children: [
-      {
-        id: 'proveedores',
-        title: 'Proveedores',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/proveedores',
-        icon: 'ant-design'
-      },
+      // {
+      //   id: 'proveedores',
+      //   title: 'Proveedores',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/proveedores',
+      //   icon: 'ant-design'
+      // },
       {
         id: 'color',
         title: 'Clientes',
@@ -96,28 +96,28 @@ export const NavigationItems: NavigationItem[] = [
       },
       {
         id: 'tabler',
-        title: 'Facturas',
+        title: 'Reservations',
         type: 'item',
         classes: 'nav-item',
         url: '/facturas',
         icon: 'ant-design'
       }, //
-      {
-        id: 'tabler',
-        title: 'Unidad de Medida',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/unidadmedida',
-        icon: 'ant-design'
-      }, //
-      {
-        id: 'tabler',
-        title: 'Productos',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/productos',
-        icon: 'ant-design'
-      }
+      // {
+      //   id: 'tabler',
+      //   title: 'Unidad de Medida',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/unidadmedida',
+      //   icon: 'ant-design'
+      // }, //
+      // {
+      //   id: 'tabler',
+      //   title: 'Productos',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/productos',
+      //   icon: 'ant-design'
+      // }
       
     ]
   },
