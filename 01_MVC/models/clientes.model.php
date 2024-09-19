@@ -42,8 +42,13 @@ class ClientModel
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `clients`( `client_name`, `client_surename`, `client_email`, `client_phonenumber`) 
-                       VALUES ($client_name, $client_surename, $client_email, $client_phonenumber)";
+            //$cadena = "INSERT INTO `clients`( `client_name`, `client_surename`, `client_email`, `client_phonenumber`) 
+             //          VALUES ($client_name, $client_surename, $client_email, $client_phonenumber)";
+
+            $cadena = "INSERT INTO `clients` (`client_name`, `client_surename`, `client_email`, `client_phonenumber`) 
+                       VALUES ('$client_name', '$client_surename', '$client_email', '$client_phonenumber')";
+
+
             
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id; // Return the inserted ID

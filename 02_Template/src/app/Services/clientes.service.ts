@@ -39,7 +39,11 @@ export class ClientesService {
     formData.append('client_email', cliente.client_email);
     formData.append('client_phonenumber', cliente.client_phonenumber);
     
-   //console.log('insertar' + formData);
+   // debug query
+  //  console.log(this.apiurl + 'actualizar');
+  //  formData.forEach((value, key) => {
+  //    console.log(`${key}: ${value}`);
+  //  });
     return this.lector.post<string>(this.apiurl + 'insertar', formData);
   }
   actualizar(cliente: ICliente): Observable<string> {
@@ -51,11 +55,11 @@ export class ClientesService {
     formData.append('client_phonenumber', cliente.client_phonenumber);
     console.log('actualizar:');
 
-    // debug query
-    console.log(this.apiurl + 'actualizar');
-    formData.forEach((value, key) => {
-      console.log(`${key}: ${value}`);
-    });
+    // // debug query
+    // console.log(this.apiurl + 'actualizar');
+    // formData.forEach((value, key) => {
+    //   console.log(`${key}: ${value}`);
+    // });
     //--
 
     return this.lector.post<string>(this.apiurl + 'actualizar', formData);

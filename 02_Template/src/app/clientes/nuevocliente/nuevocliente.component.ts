@@ -8,8 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 
-
-
 @Component({
   selector: 'app-nuevocliente',
   standalone: true,

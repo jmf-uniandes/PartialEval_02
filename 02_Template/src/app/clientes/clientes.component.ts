@@ -24,7 +24,7 @@ export class ClientesComponent {
       this.listaclientes = data;
     });
   }
-  eliminar(idClientes) {
+  eliminar(idClients) {
     Swal.fire({
       title: 'Clientes',
       text: 'Esta seguro que desea eliminar el cliente!',
@@ -35,7 +35,7 @@ export class ClientesComponent {
       confirmButtonText: 'Emliminar Cliente'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.clienteServicio.eliminar(idClientes).subscribe((data) => {
+        this.clienteServicio.eliminar(idClients).subscribe((data) => {
           Swal.fire('Clientes', 'El cliente ha sido eliminado.', 'success');
           this.cargatabla();
         });
