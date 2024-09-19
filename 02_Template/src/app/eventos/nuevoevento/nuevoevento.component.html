@@ -1,0 +1,77 @@
+<div class="card my-5">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-end mb-4">
+      <h3 class="mb-0">
+        {{ titulo }}
+        <!--Interpolacion
+          sirve para enviar datos desde el .ts hacia el html
+          -->
+      </h3>
+    </div>
+    <form [formGroup]="frm_Cliente" (ngSubmit)="grabar()">
+      <div class="row">
+        <!-- <div class="form-group mb-3">
+          <label class="form-label" for="Cedula">Cedula</label>
+          <input formControlName="Cedula" type="text" class="form-control" id="Cedula" placeholder="Ingrese la cedula Cedula" />
+          <div *ngIf="frm_Cliente.get('Cedula').invalid && frm_Cliente.get('Cedula').touched">
+            <small *ngIf="frm_Cliente.get('Cedula').hasError('required')" style="color: red">La cedula es requerida</small>
+            <small *ngIf="frm_Cliente.get('Cedula').hasError('cedulaInvalida')" style="color: red">La cedula ingresa no es correcta</small>
+            <small *ngIf="frm_Cliente.get('Cedula').hasError('provincia')" style="color: red">La provincia no existe</small>
+          </div>
+        </div> -->
+        <div class="form-group mb-3">
+          <label class="form-label" for="client_name">Nombre</label>
+          <input formControlName="client_name" type="text" class="form-control" id="client_name" placeholder="Ingrese el nombre del cliente" />
+          <div *ngIf="frm_Cliente.get('client_name').invalid && frm_Cliente.get('client_name').touched">
+            <small *ngIf="frm_Cliente.get('client_name').hasError('required')" style="color: red">El nombre del cliente es requerido</small>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label" for="client_surename">Apellido</label>
+          <input type="text" class="form-control" formControlName="client_surename" id="client_surename" />
+          <div *ngIf="frm_Cliente.get('client_surename').invalid && frm_Cliente.get('client_surename').touched">
+            <small *ngIf="frm_Cliente.get('client_surename').hasError('required')" style="color: red">La client_surename es requerida</small>
+          </div>
+        </div>
+
+
+        <div class="form-group mb-3">
+          <label class="form-label" for="client_phonenumber">Telefono</label>
+          <input type="text" formControlName="client_phonenumber" class="form-control" id="client_phonenumber" />
+          <div *ngIf="frm_Cliente.get('client_phonenumber').invalid && frm_Cliente.get('client_phonenumber').touched">
+            <small *ngIf="frm_Cliente.get('client_phonenumber').hasError('required')" style="color: red">El client_phonenumber es requerido</small>
+          </div>
+        </div>
+       
+        <div class="form-group mb-3">
+          <label class="form-label" for="client_email">Correo Electronico</label>
+          <input type="email" formControlName="client_email" class="form-control" id="client_email" />
+          <div *ngIf="frm_Cliente.get('client_email').invalid && frm_Cliente.get('client_email').touched">
+            <small *ngIf="frm_Cliente.get('client_email').hasError('required')" style="color: red">El Email es requerido</small>
+            <small *ngIf="frm_Cliente.get('client_email').hasError('email')" style="color: red">Debe ingresar un email valido</small>
+          </div>
+        </div>
+        <div class="d-grid mt-3">
+          <button type="submit" class="btn btn-primary" [disabled]="frm_Cliente.invalid">Grabar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--
+  IMPORTAR => FORMSMODULE  APP.MODULE.TS ||  NUEVOPROVEEDOR.COMPONENT.TS
+  
+  
+  
+  
+  
+  INTRPOLACION => DESDE EL TS AL HTML
+  {{ }} 
+  EVENTOS => EJECUTAR FUNCIONES EN EL TS
+  ()
+  DATA BINDING => DESDE EL HTML AL TS
+  []
+  TWO WAY BIDING => ENVIADO DE DATOS DESDE EL HTML AL TS Y DESDE EL TS AL HTML
+  [()]
+  -->
