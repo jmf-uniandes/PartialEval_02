@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-12">
-    <app-card cardTitle="Lista de Clientes" blockClass="pc-component">
+    <app-card cardTitle="Lista de Eventos" blockClass="pc-component">
       <div class="col-md-12 col-xl-8">
         <h5 class="mb-3">
-          <a href="nuevocliente" class="btn btn-outline-dark">Nuevo Cliente</a>
+          <a href="nuevoevento" class="btn btn-outline-dark">Nuevo Evento</a>
         </h5>
         <div class="card tbl-card">
           <div class="table-responsive">
@@ -11,29 +11,31 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Telefono</th>
-                  <th>Correo Electronico</th>
-                  <th></th>
+                  <th>Evento</th>
+                  <th>Descripcion</th>
+                  <th>Ubicacion</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
                 </tr>
               </thead>
               <tbody>
-                @for (cliente of listaclientes; track $index) {
+                
+                @for (evento of listaevents; track $index) {
                   <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ cliente.client_name }}</td>
-                    <td>{{ cliente.client_surename }}</td>
-                    <td>{{ cliente.client_phonenumber }}</td>
-                    <td>{{ cliente.client_email }}</td>
+                    <td>{{ evento.event_name }}</td>
+                    <td>{{ evento.event_description}}</td>
+                    <td>{{ evento.event_location }}</td>
+                    <td>{{ evento.event_date }}</td>
+                    <td>{{evento.event_status}}</td>
                     <td>
                       <button
                       type="button"
                       class="btn btn-outline-success"
-                      [routerLink]="['/editarcliente/', cliente.idClients]">
+                      [routerLink]="['/editarevento/', evento.idEvents]">
                         Editar
                       </button>
-                      <button (click)="eliminar(cliente.idClients)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                      <button (click)="eliminar(evento.idEvents)" type="button" class="btn btn-outline-danger">Eliminar</button>
                     </td>
                   </tr>
                 }

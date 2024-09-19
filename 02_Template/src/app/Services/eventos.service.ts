@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { IEvent } from '../Interfaces/ievent';
 import { Observable } from 'rxjs';
 

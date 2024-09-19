@@ -8,51 +8,50 @@
           -->
       </h3>
     </div>
-    <form [formGroup]="frm_Cliente" (ngSubmit)="grabar()">
+    <form [formGroup]="frm_Evento" (ngSubmit)="grabar()">
       <div class="row">
-        <!-- <div class="form-group mb-3">
-          <label class="form-label" for="Cedula">Cedula</label>
-          <input formControlName="Cedula" type="text" class="form-control" id="Cedula" placeholder="Ingrese la cedula Cedula" />
-          <div *ngIf="frm_Cliente.get('Cedula').invalid && frm_Cliente.get('Cedula').touched">
-            <small *ngIf="frm_Cliente.get('Cedula').hasError('required')" style="color: red">La cedula es requerida</small>
-            <small *ngIf="frm_Cliente.get('Cedula').hasError('cedulaInvalida')" style="color: red">La cedula ingresa no es correcta</small>
-            <small *ngIf="frm_Cliente.get('Cedula').hasError('provincia')" style="color: red">La provincia no existe</small>
-          </div>
-        </div> -->
         <div class="form-group mb-3">
-          <label class="form-label" for="client_name">Nombre</label>
-          <input formControlName="client_name" type="text" class="form-control" id="client_name" placeholder="Ingrese el nombre del cliente" />
-          <div *ngIf="frm_Cliente.get('client_name').invalid && frm_Cliente.get('client_name').touched">
-            <small *ngIf="frm_Cliente.get('client_name').hasError('required')" style="color: red">El nombre del cliente es requerido</small>
+          <label class="form-label" for="event_name">Nombre</label>
+          <input formControlName="event_name" type="text" class="form-control" id="event_name" placeholder="Ingrese el nombre del cliente" />
+          <div *ngIf="frm_Evento.get('event_name').invalid && frm_Evento.get('event_name').touched">
+            <small *ngIf="frm_Evento.get('event_name').hasError('required')" style="color: red">El nombre del cliente es requerido</small>
           </div>
         </div>
         <div class="form-group mb-3">
-          <label class="form-label" for="client_surename">Apellido</label>
-          <input type="text" class="form-control" formControlName="client_surename" id="client_surename" />
-          <div *ngIf="frm_Cliente.get('client_surename').invalid && frm_Cliente.get('client_surename').touched">
-            <small *ngIf="frm_Cliente.get('client_surename').hasError('required')" style="color: red">La client_surename es requerida</small>
+          <label class="form-label" for="event_description">Apellido</label>
+          <input type="text" class="form-control" formControlName="event_description" id="event_description" />
+          <div *ngIf="frm_Evento.get('event_description').invalid && frm_Evento.get('event_description').touched">
+            <small *ngIf="frm_Evento.get('event_description').hasError('required')" style="color: red">La event_description es requerida</small>
           </div>
         </div>
-
-
         <div class="form-group mb-3">
-          <label class="form-label" for="client_phonenumber">Telefono</label>
-          <input type="text" formControlName="client_phonenumber" class="form-control" id="client_phonenumber" />
-          <div *ngIf="frm_Cliente.get('client_phonenumber').invalid && frm_Cliente.get('client_phonenumber').touched">
-            <small *ngIf="frm_Cliente.get('client_phonenumber').hasError('required')" style="color: red">El client_phonenumber es requerido</small>
+          <label class="form-label" for="event_location">Telefono</label>
+          <input type="text" formControlName="event_location" class="form-control" id="event_location" />
+          <div *ngIf="frm_Evento.get('event_location').invalid && frm_Evento.get('event_location').touched">
+            <small *ngIf="frm_Evento.get('event_location').hasError('required')" style="color: red">El event_location es requerido</small>
           </div>
         </div>
        
         <div class="form-group mb-3">
-          <label class="form-label" for="client_email">Correo Electronico</label>
-          <input type="email" formControlName="client_email" class="form-control" id="client_email" />
-          <div *ngIf="frm_Cliente.get('client_email').invalid && frm_Cliente.get('client_email').touched">
-            <small *ngIf="frm_Cliente.get('client_email').hasError('required')" style="color: red">El Email es requerido</small>
-            <small *ngIf="frm_Cliente.get('client_email').hasError('email')" style="color: red">Debe ingresar un email valido</small>
+          <label class="form-label" for="event_date">Correo Electronico</label>
+          <input type="email" formControlName="event_date" class="form-control" id="event_date" />
+          <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
+            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">El Email es requerido</small>
+            <small *ngIf="frm_Evento.get('event_date').hasError('email')" style="color: red">Debe ingresar un email valido</small>
           </div>
         </div>
+        
+        <div class="form-group mb-3">
+          <label class="form-label" for="event_status">Correo Electronico</label>
+          <input type="email" formControlName="event_status" class="form-control" id="event_status" />
+          <div *ngIf="frm_Evento.get('event_status').invalid && frm_Evento.get('event_status').touched">
+            <small *ngIf="frm_Evento.get('event_status').hasError('required')" style="color: red">El Email es requerido</small>
+            <small *ngIf="frm_Evento.get('event_status').hasError('email')" style="color: red">Debe ingresar un email valido</small>
+          </div>
+        </div>
+        
         <div class="d-grid mt-3">
-          <button type="submit" class="btn btn-primary" [disabled]="frm_Cliente.invalid">Grabar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="frm_Evento.invalid">Grabar</button>
         </div>
       </div>
     </form>
