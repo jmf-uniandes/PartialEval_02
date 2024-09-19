@@ -32,14 +32,26 @@
           </div>
         </div>
        
-        <div class="form-group mb-3">
+        <!-- <div class="form-group mb-3">
           <label class="form-label" for="event_date">Fecha del evento</label>
           <input type="email" formControlName="event_date" class="form-control" id="event_date" />
           <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
             <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">La feha del evento es requerida</small>
             
           </div>
+        </div> -->
+
+        <div class="form-group mb-3">
+          <label class="form-label" for="event_date">Fecha y hora del evento</label>
+          <input type="datetime-local" formControlName="event_date" class="form-control" id="event_date" />
+          <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
+            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">
+              La fecha y hora del evento son requeridas
+            </small>
+          </div>
         </div>
+        
+
         
         <div class="form-group mb-3">
           <label class="form-label" for="event_status">Status</label>
