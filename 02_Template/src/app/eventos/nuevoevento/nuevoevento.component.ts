@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-//import { EventsService } from '../Services/eventos.service';
 import { EventsService } from 'src/app/Services/eventos.service';
 import { IEvent } from 'src/app/Interfaces/ievent';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { SharedModule } from 'src/app/theme/shared/shared.module';
-
 
 
 @Component({
@@ -27,6 +24,7 @@ export class NuevoeventoComponent implements OnInit {
     event_date: new FormControl('', Validators.required),
     event_status: new FormControl('', Validators.required)
   });
+  
   idEvents = 0;
   titulo = 'Nuevo Evento';
   constructor(
@@ -44,11 +42,12 @@ export class NuevoeventoComponent implements OnInit {
         this.frm_Evento.controls['event_location'].setValue(unevento.event_location);       
         this.frm_Evento.controls['event_date'].setValue(unevento.event_date);
         this.frm_Evento.controls['event_status'].setValue(unevento.event_status);  
-        this.titulo = 'Editar Evento' ;
+        this.titulo = 'Editar Evento ' + this.idEvents ;
       });
     }
      else
      {
+      this.titulo = 'Nuevo Evento' + this.idEvents;
        this.idEvents =0;
      }
   }
@@ -66,7 +65,7 @@ export class NuevoeventoComponent implements OnInit {
 
     Swal.fire({
       title: 'Eventos',
-      text: 'Desea guardar el Evento ' + this.frm_Evento.controls['event_name'].value,
+      text: 'Desea guardar el Evento ' + this.frm_Evento.controls['event_name'].value +'?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#f00',

@@ -66,6 +66,21 @@ const routes: Routes = [
         canActivate: [usuariosGuardGuard]
       },
       {
+        path: 'eventos',
+        loadComponent: () => import('./eventos/eventos.component').then((m) => m.EventsComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+      {
+        path: 'nuevoevento',
+        loadComponent: () => import('./eventos/nuevoevento/nuevoevento.component').then((m) => m.NuevoeventoComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+      {
+        path: 'editarevento/:idEvents',
+        loadComponent: () => import('./eventos/nuevoevento/nuevoevento.component').then((m) => m.NuevoeventoComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+      {
         path: 'editarfactura/:id',
         loadComponent: () => import('./facturas/nuevafactura/nuevafactura.component').then((m) => m.NuevafacturaComponent)
       },
@@ -109,26 +124,7 @@ const routes: Routes = [
         path: 'editarproducto/:id',
         loadComponent: () => import('./productos/nuevoproducto/nuevoproducto.component').then((m) => m.NuevoproductoComponent),
         canActivate: [usuariosGuardGuard]
-      },
-
-      {
-        path: 'eventos',
-        loadComponent: () => import('./eventos/eventos.component').then((m) => m.EventsComponent),
-        canActivate: [usuariosGuardGuard]
-      },
-      {
-        path: 'nuevoevento',
-        loadComponent: () => import('./eventos/nuevoevento/nuevoevento.component').then((m) => m.NuevoeventoComponent),
-        canActivate: [usuariosGuardGuard]
-      },
-      {
-        path: 'editarevento/:id',
-        loadComponent: () => import('./eventos/nuevoevento/nuevoevento.component').then((m) => m.NuevoeventoComponent),
-        canActivate: [usuariosGuardGuard]
       }
-
-
-
     ]
   },
   {

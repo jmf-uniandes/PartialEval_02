@@ -64,8 +64,8 @@ class eventsModel
                        `event_name`='$event_name',
                        `event_description`='$event_description',
                        `event_date`='$event_date',
-                       `event_location`='$event_location'
-                       `event_satus`='$event_satus'                     
+                       `event_location`='$event_location',
+                       `event_status`='$event_satus'                 
                        WHERE `idEvents` = $idEvents";
             if (mysqli_query($con, $cadena)) {
                 return $idEvents; // Return the updated ID

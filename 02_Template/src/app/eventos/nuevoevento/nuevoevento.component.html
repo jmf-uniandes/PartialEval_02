@@ -11,24 +11,24 @@
     <form [formGroup]="frm_Evento" (ngSubmit)="grabar()">
       <div class="row">
         <div class="form-group mb-3">
-          <label class="form-label" for="event_name">Nombre</label>
+          <label class="form-label" for="event_name">Nombre del Evento</label>
           <input formControlName="event_name" type="text" class="form-control" id="event_name" placeholder="Ingrese el nombre del cliente" />
           <div *ngIf="frm_Evento.get('event_name').invalid && frm_Evento.get('event_name').touched">
-            <small *ngIf="frm_Evento.get('event_name').hasError('required')" style="color: red">El nombre del cliente es requerido</small>
+            <small *ngIf="frm_Evento.get('event_name').hasError('required')" style="color: red">El nombre del evento es requerido</small>
           </div>
         </div>
         <div class="form-group mb-3">
-          <label class="form-label" for="event_description">Apellido</label>
+          <label class="form-label" for="event_description">Descripcion del evento</label>
           <input type="text" class="form-control" formControlName="event_description" id="event_description" />
           <div *ngIf="frm_Evento.get('event_description').invalid && frm_Evento.get('event_description').touched">
-            <small *ngIf="frm_Evento.get('event_description').hasError('required')" style="color: red">La event_description es requerida</small>
+            <small *ngIf="frm_Evento.get('event_description').hasError('required')" style="color: red">La descripcion es requerida</small>
           </div>
         </div>
         <div class="form-group mb-3">
-          <label class="form-label" for="event_location">Telefono</label>
+          <label class="form-label" for="event_location">Ubicacion</label>
           <input type="text" formControlName="event_location" class="form-control" id="event_location" />
           <div *ngIf="frm_Evento.get('event_location').invalid && frm_Evento.get('event_location').touched">
-            <small *ngIf="frm_Evento.get('event_location').hasError('required')" style="color: red">El event_location es requerido</small>
+            <small *ngIf="frm_Evento.get('event_location').hasError('required')" style="color: red">La Ubicacion es requerido</small>
           </div>
         </div>
        
@@ -42,11 +42,10 @@
         </div>
         
         <div class="form-group mb-3">
-          <label class="form-label" for="event_status">Correo Electronico</label>
+          <label class="form-label" for="event_status">Status</label>
           <input type="email" formControlName="event_status" class="form-control" id="event_status" />
           <div *ngIf="frm_Evento.get('event_status').invalid && frm_Evento.get('event_status').touched">
-            <small *ngIf="frm_Evento.get('event_status').hasError('required')" style="color: red">El Email es requerido</small>
-            <small *ngIf="frm_Evento.get('event_status').hasError('email')" style="color: red">Debe ingresar un email valido</small>
+            <small *ngIf="frm_Evento.get('event_status').hasError('required')" style="color: red">El status es requerido</small>
           </div>
         </div>
         

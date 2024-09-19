@@ -41,7 +41,7 @@ switch ($_GET["op"]) {
 
     case 'uno': // Procedimiento para obtener un registro de la base de datos
         if (!isset($_POST["idEvents"])) {
-            echo json_encode(["error" => "Client ID not specified."]);
+            echo json_encode(["error" => "Event ID not specified."]);
             exit();
         }
         $idEvents = intval($_POST["idEvents"]);
@@ -80,10 +80,11 @@ switch ($_GET["op"]) {
         $event_description = $_POST["event_description"];
         $event_date = $_POST["event_date"];
         $event_location = $_POST["event_location"];
+        $event_status = $_POST["event_status"];
         
 
         $datos = array();
-        $datos = $events->actualizar($idEvents, $event_name, $event_description, $event_date, $event_location);
+        $datos = $events->actualizar($idEvents, $event_name, $event_description, $event_date, $event_location,$event_status);
         echo json_encode($datos);
         break;
 
