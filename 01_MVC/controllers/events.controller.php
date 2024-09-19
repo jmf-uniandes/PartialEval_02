@@ -70,7 +70,7 @@ switch ($_GET["op"]) {
         break;
 
     case 'actualizar': // Procedimiento para actualizar un evento en la base de datos
-        if (!isset($_POST["idEvents"]) || !isset($_POST["event_name"]) || !isset($_POST["event_description"]) || !isset($_POST["event_date"]) || !isset($_POST["event_location"])) {
+        if (!isset($_POST["idEvents"]) || !isset($_POST["event_name"]) || !isset($_POST["event_description"]) || !isset($_POST["event_date"]) || !isset($_POST["event_location"])|| !isset($_POST["event_status"])) {
             echo json_encode(["error" => "Missing required parameters."]);
             exit();
         }
@@ -80,7 +80,7 @@ switch ($_GET["op"]) {
         $event_description = $_POST["event_description"];
         $event_date = $_POST["event_date"];
         $event_location = $_POST["event_location"];
-        $event_status = $_POST["event_status"];
+        $event_status = intval($_POST["event_status"]);
         
 
         $datos = array();

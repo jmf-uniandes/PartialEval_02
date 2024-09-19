@@ -37,9 +37,12 @@ export class EventsService {
     formData.append('event_date', evento.event_date);
     formData.append('event_location', evento.event_location);
     formData.append('event_status', evento.event_status);
-    //`event_name`, `event_description`, `event_date`, `event_location`, `event_status`
-    
-   //console.log('insertar' + formData);
+   // debug query
+   console.log(this.apiurl + 'actualizar');
+   formData.forEach((value, key) => {
+     console.log(`${key}: ${value}`);
+   });
+   //--
     return this.lector.post<string>(this.apiurl + 'insertar', formData);
   }
     actualizar(evento: IEvent): Observable<string> {

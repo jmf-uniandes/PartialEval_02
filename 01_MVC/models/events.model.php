@@ -36,13 +36,15 @@ class eventsModel
         return $datos;
     }
 
-    public function insertar($event_name,$event_description,$event_date, $event_location,$event_satus ) // INSERT INTO `events`(`idEvents`, `event_name`, `event_description`, `event_date`, `event_location`,`event_status`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+    public function insertar($event_name,$event_description,$event_date, $event_location,$event_status ) // INSERT INTO `events`(`idEvents`, `event_name`, `event_description`, `event_date`, `event_location`,`event_status`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
     {
+        //VALUES ($event_name, $event_description, $event_date, $event_location, $event_status)";
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `events`(`event_name`, `event_description`, `event_date`, `event_location`, `event_status`) 
-                       VALUES ($event_name,$event_description,$event_date, $event_location,$event_satus)";
+            
+            $cadena = "INSERT INTO `events`( `event_name`, `event_description`, `event_date`, `event_location`, `event_status`)                       
+                        VALUES ('$event_name', '$event_description', '$event_date', '$event_location', '$event_status')";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id; // Return the inserted ID
             } else {
@@ -55,7 +57,7 @@ class eventsModel
         }
     }
 
-    public function actualizar($idEvents, $event_name,$event_description,$event_date, $event_location,$event_satus) //UPDATE `events` SET `idEvents`='[value-1]',`event_name`='[value-2]',`event_description`='[value-3]',`event_date`='[value-4]',`event_location`='[value-5]' WHERE 1
+    public function actualizar($idEvents, $event_name,$event_description,$event_date, $event_location,$event_status) //UPDATE `events` SET `idEvents`='[value-1]',`event_name`='[value-2]',`event_description`='[value-3]',`event_date`='[value-4]',`event_location`='[value-5]' WHERE 1
     {
         try {
             $con = new ClaseConectar();
@@ -65,7 +67,7 @@ class eventsModel
                        `event_description`='$event_description',
                        `event_date`='$event_date',
                        `event_location`='$event_location',
-                       `event_status`='$event_satus'                 
+                       `event_status`='$event_status'                 
                        WHERE `idEvents` = $idEvents";
             if (mysqli_query($con, $cadena)) {
                 return $idEvents; // Return the updated ID

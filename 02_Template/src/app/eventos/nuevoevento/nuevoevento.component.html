@@ -12,7 +12,7 @@
       <div class="row">
         <div class="form-group mb-3">
           <label class="form-label" for="event_name">Nombre del Evento</label>
-          <input formControlName="event_name" type="text" class="form-control" id="event_name" placeholder="Ingrese el nombre del cliente" />
+          <input formControlName="event_name" type="text" class="form-control" id="event_name" placeholder="Ingrese el nombre del evento" />
           <div *ngIf="frm_Evento.get('event_name').invalid && frm_Evento.get('event_name').touched">
             <small *ngIf="frm_Evento.get('event_name').hasError('required')" style="color: red">El nombre del evento es requerido</small>
           </div>
@@ -33,11 +33,11 @@
         </div>
        
         <div class="form-group mb-3">
-          <label class="form-label" for="event_date">Correo Electronico</label>
+          <label class="form-label" for="event_date">Fecha del evento</label>
           <input type="email" formControlName="event_date" class="form-control" id="event_date" />
           <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
-            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">El Email es requerido</small>
-            <small *ngIf="frm_Evento.get('event_date').hasError('email')" style="color: red">Debe ingresar un email valido</small>
+            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">La feha del evento es requerida</small>
+            
           </div>
         </div>
         

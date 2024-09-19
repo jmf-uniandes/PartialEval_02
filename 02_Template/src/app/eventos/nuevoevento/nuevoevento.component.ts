@@ -47,12 +47,13 @@ export class NuevoeventoComponent implements OnInit {
     }
      else
      {
-      this.titulo = 'Nuevo Evento' + this.idEvents;
+      this.titulo = 'Nuevo Evento';
        this.idEvents =0;
      }
   }
 
   grabar() {
+    
     let evento: IEvent = {
       idEvents: this.idEvents,
       event_name: this.frm_Evento.controls['event_name'].value,
@@ -60,7 +61,7 @@ export class NuevoeventoComponent implements OnInit {
       event_location: this.frm_Evento.controls['event_location'].value,
       event_date: this.frm_Evento.controls['event_date'].value,
       event_status: this.frm_Evento.controls['event_status'].value
-      //console.log(this.frm_Evento.controls['event_name'].value+this.frm_Evento.controls['event_description'].value)
+           
     };
 
     Swal.fire({
