@@ -39,7 +39,7 @@ export class NuevareservaComponent implements OnInit {
     if (this.idReservations > 0) {
         this.reservaServicio.uno(this.idReservations).subscribe((unareserva) => {
         this.frm_Reserva.controls['clients_idClients'].setValue(unareserva.clients_idClients.toString());
-        this.frm_Reserva.controls['events_idReservations'].setValue(unareserva.events_idReservations.toString());
+        this.frm_Reserva.controls['events_idReservations'].setValue(unareserva.events_idEvents.toString());
         //this.frm_Reserva.controls['event_location'].setValue(unareserva.event_location);       
         this.frm_Reserva.controls['reservationStatus'].setValue(unareserva.reservationStatus.toString());
         //this.frm_Reserva.controls['event_status'].setValue(unareserva.event_status.toString());  
@@ -63,12 +63,7 @@ export class NuevareservaComponent implements OnInit {
       reservationStatus: Number(this.frm_Reserva.controls['reservationStatus'].value),
       //event_status: this.frm_Reserva.controls['event_status'].value
        
-      
-
-
-
-
-      
+     
     };
 
     Swal.fire({

@@ -99,9 +99,18 @@ export const NavigationItems: NavigationItem[] = [
         title: 'Reservations',
         type: 'item',
         classes: 'nav-item',
-        url: '/facturas',
+        url: '/reservaciones',
         icon: 'ant-design'
       }, //
+
+      {
+        id: 'tabler',
+        title: 'Factura',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/facturas',
+        icon: 'ant-design'
+      }, 
       // {
       //   id: 'tabler',
       //   title: 'Unidad de Medida',

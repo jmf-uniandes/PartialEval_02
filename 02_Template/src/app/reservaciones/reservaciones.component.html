@@ -13,10 +13,10 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>reserva</th>
-                  <th>Descripcion</th>
-                  <th>Ubicacion</th>
-                  <th>Fecha</th>
+                  <th>Reservacion ID</th>
+                  <th>Evento ID</th>
+                  <th>Cliente ID</th>
+                  <th>Status de la Reservacion</th>
                   <th>Estado</th>
                   <th></th>
                 </tr>
@@ -26,11 +26,11 @@
                 @for (reserva of listareservations; track $index) {
                   <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ reserva.event_name }}</td>
-                    <td>{{ reserva.event_description}}</td>
-                    <td>{{ reserva.event_location }}</td>
-                    <td>{{ reserva.event_date }}</td>
-                    <td>{{reserva.event_status}}</td>
+                    <td>{{ reserva.idReservations }}</td>
+                    <td>{{ reserva.events_idEvents}}</td>
+                    <td>{{ reserva.clients_idClients }}</td>
+                    <td>{{ reserva.reservationStatus }}</td>
+                    
                     <td>
                       <button
                       type="button"

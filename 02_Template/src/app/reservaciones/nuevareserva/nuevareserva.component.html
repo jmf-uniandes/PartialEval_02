@@ -8,44 +8,44 @@
           -->
       </h3>
     </div>
-    <form [formGroup]="frm_Evento" (ngSubmit)="grabar()">
+    <form [formGroup]="frm_Reserva" (ngSubmit)="grabar()">
       <div class="row">
         <div class="form-group mb-3">
-          <label class="form-label" for="event_name">Nombre del Evento</label>
-          <input formControlName="event_name" type="text" class="form-control" id="event_name" placeholder="Ingrese el nombre del evento" />
-          <div *ngIf="frm_Evento.get('event_name').invalid && frm_Evento.get('event_name').touched">
-            <small *ngIf="frm_Evento.get('event_name').hasError('required')" style="color: red">El nombre del evento es requerido</small>
+          <label class="form-label" for="clients_idClients">Nombre del Evento</label>
+          <input formControlName="clients_idClients" type="text" class="form-control" id="clients_idClients" placeholder="Ingrese el nombre del evento" />
+          <div *ngIf="frm_Reserva.get('clients_idClients').invalid && frm_Reserva.get('clients_idClients').touched">
+            <small *ngIf="frm_Reserva.get('clients_idClients').hasError('required')" style="color: red">El nombre del evento es requerido</small>
           </div>
         </div>
         <div class="form-group mb-3">
-          <label class="form-label" for="event_description">Descripcion del evento</label>
-          <input type="text" class="form-control" formControlName="event_description" id="event_description" />
-          <div *ngIf="frm_Evento.get('event_description').invalid && frm_Evento.get('event_description').touched">
-            <small *ngIf="frm_Evento.get('event_description').hasError('required')" style="color: red">La descripcion es requerida</small>
+          <label class="form-label" for="events_IdEvents">Descripcion del evento</label>
+          <input type="text" class="form-control" formControlName="events_IdEvents" id="events_IdEvents" />
+          <div *ngIf="frm_Reserva.get('events_IdEvents').invalid && frm_Reserva.get('events_IdEvents').touched">
+            <small *ngIf="frm_Reserva.get('events_IdEvents').hasError('required')" style="color: red">La descripcion es requerida</small>
           </div>
         </div>
-        <div class="form-group mb-3">
+        <!-- <div class="form-group mb-3">
           <label class="form-label" for="event_location">Ubicacion</label>
           <input type="text" formControlName="event_location" class="form-control" id="event_location" />
-          <div *ngIf="frm_Evento.get('event_location').invalid && frm_Evento.get('event_location').touched">
-            <small *ngIf="frm_Evento.get('event_location').hasError('required')" style="color: red">La Ubicacion es requerido</small>
+          <div *ngIf="frm_Reserva.get('event_location').invalid && frm_Reserva.get('event_location').touched">
+            <small *ngIf="frm_Reserva.get('event_location').hasError('required')" style="color: red">La Ubicacion es requerido</small>
           </div>
-        </div>
+        </div> -->
        
         <!-- <div class="form-group mb-3">
-          <label class="form-label" for="event_date">Fecha del evento</label>
-          <input type="email" formControlName="event_date" class="form-control" id="event_date" />
-          <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
-            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">La feha del evento es requerida</small>
+          <label class="form-label" for="reservationStatus">Fecha del evento</label>
+          <input type="email" formControlName="reservationStatus" class="form-control" id="reservationStatus" />
+          <div *ngIf="frm_Reserva.get('reservationStatus').invalid && frm_Reserva.get('reservationStatus').touched">
+            <small *ngIf="frm_Reserva.get('reservationStatus').hasError('required')" style="color: red">La feha del evento es requerida</small>
             
           </div>
         </div> -->
 
         <div class="form-group mb-3">
-          <label class="form-label" for="event_date">Fecha y hora del evento</label>
-          <input type="datetime-local" formControlName="event_date" class="form-control" id="event_date" />
-          <div *ngIf="frm_Evento.get('event_date').invalid && frm_Evento.get('event_date').touched">
-            <small *ngIf="frm_Evento.get('event_date').hasError('required')" style="color: red">
+          <label class="form-label" for="reservationStatus">Fecha y hora del evento</label>
+          <input type="datetime-local" formControlName="reservationStatus" class="form-control" id="reservationStatus" />
+          <div *ngIf="frm_Reserva.get('reservationStatus').invalid && frm_Reserva.get('reservationStatus').touched">
+            <small *ngIf="frm_Reserva.get('reservationStatus').hasError('required')" style="color: red">
               La fecha y hora del evento son requeridas
             </small>
           </div>
@@ -53,16 +53,16 @@
         
 
         
-        <div class="form-group mb-3">
+        <!-- <div class="form-group mb-3">
           <label class="form-label" for="event_status">Status</label>
           <input type="email" formControlName="event_status" class="form-control" id="event_status" />
-          <div *ngIf="frm_Evento.get('event_status').invalid && frm_Evento.get('event_status').touched">
-            <small *ngIf="frm_Evento.get('event_status').hasError('required')" style="color: red">El status es requerido</small>
+          <div *ngIf="frm_Reserva.get('event_status').invalid && frm_Reserva.get('event_status').touched">
+            <small *ngIf="frm_Reserva.get('event_status').hasError('required')" style="color: red">El status es requerido</small>
           </div>
-        </div>
+        </div> -->
         
         <div class="d-grid mt-3">
-          <button type="submit" class="btn btn-primary" [disabled]="frm_Evento.invalid">Grabar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="frm_Reserva.invalid">Grabar</button>
         </div>
       </div>
     </form>
