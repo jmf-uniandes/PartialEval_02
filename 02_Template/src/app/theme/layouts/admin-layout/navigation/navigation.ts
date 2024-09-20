@@ -99,7 +99,7 @@ export const NavigationItems: NavigationItem[] = [
         title: 'Reservations',
         type: 'item',
         classes: 'nav-item',
-        url: '/reservaciones',
+        url: '/reserva',
         icon: 'ant-design'
       }, //
 
