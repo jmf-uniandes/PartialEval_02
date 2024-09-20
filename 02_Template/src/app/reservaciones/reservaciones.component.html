@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="Lista de reservas" blockClass="pc-component">
+      <div class="col-md-12 col-xl-8">
+        <h5 class="mb-3">
+          <a href="nuevareserva" class="btn btn-outline-dark">Nueva Reserva</a>
+          <a href="nuevareserva" class="btn btn-outline-dark">Imprimir reporte de reservaciones</a>
+        </h5>
+
+        <div class="card tbl-card">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>reserva</th>
+                  <th>Descripcion</th>
+                  <th>Ubicacion</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                @for (reserva of listareservations; track $index) {
+                  <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ reserva.event_name }}</td>
+                    <td>{{ reserva.event_description}}</td>
+                    <td>{{ reserva.event_location }}</td>
+                    <td>{{ reserva.event_date }}</td>
+                    <td>{{reserva.event_status}}</td>
+                    <td>
+                      <button
+                      type="button"
+                      class="btn btn-outline-success"
+                      [routerLink]="['/editarReserva/', reserva.idReservations]">
+                        Editar
+                      </button>
+                      <button (click)="eliminar(reserva.idReservations)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
+<!--
+  LOS COMPONENTES (.TS) ESTAN OBLIGADOS A IMPORTAR LA REFERENCIA PARA QUE SE PUEDA USAR EN EL HTML
+  -->

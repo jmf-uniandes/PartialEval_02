@@ -80,6 +80,35 @@ const routes: Routes = [
         loadComponent: () => import('./eventos/nuevoevento/nuevoevento.component').then((m) => m.NuevoeventoComponent),
         canActivate: [usuariosGuardGuard]
       },
+      
+
+
+
+
+      {
+        path: 'reserva',
+        loadComponent: () => import('./reservaciones/reservaciones.component').then((m) => m.ReservaComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+      {
+        path: 'nuevareserva',
+        loadComponent: () => import('./reservaciones/nuevareserva/nuevareserva.component').then((m) => m.NuevareservaComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+      {
+        path: 'editarReserva/:idReservations',
+        loadComponent: () => import('./reservaciones/nuevareserva/nuevareserva.component').then((m) => m.NuevareservaComponent),
+        canActivate: [usuariosGuardGuard]
+      },
+
+
+
+
+
+
+
+
+      
       {
         path: 'editarfactura/:id',
         loadComponent: () => import('./facturas/nuevafactura/nuevafactura.component').then((m) => m.NuevafacturaComponent)
